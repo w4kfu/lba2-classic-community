@@ -16,6 +16,9 @@ char	OSString[128];
 
 //----------------------------------------------------------------------------
 #ifdef	_WIN32
+
+#define VER_PLATFORM_WIN32_WINDOWS 1
+
 void	DetectOS()
 {
 	OSVERSIONINFO	osVersionInfo	;

@@ -44,10 +44,12 @@ static void TerminateWindow()
 	ManageEvents()	;
 }
 
+#define WS_EX_APPWINDOW         0x00040000L
+
 //----------------------------------------------------------------------------
 void	InitWindow( HANDLE hinstance, int nCmdShow, char *title)
 {
-   	WNDCLASSEX	wc		;
+   	WNDCLASS	wc		;
 	char		semname[_MAX_PATH];
 
 
@@ -76,7 +78,7 @@ void	InitWindow( HANDLE hinstance, int nCmdShow, char *title)
    	//
    	// set up and register window class
    	//
-	wc.cbSize	= sizeof(wc)			;
+	//wc.cbSize	= sizeof(wc)			;
    	wc.lpszClassName= "ADELINE"			;
    	wc.style	= 0				;
    	wc.cbClsExtra	= 0				;
@@ -84,7 +86,7 @@ void	InitWindow( HANDLE hinstance, int nCmdShow, char *title)
    	wc.hInstance	= hinstance			;
 //   	wc.hIcon	= LoadIcon( hinstance, MAKEINTRESOURCE(0) );
    	wc.hIcon	= LoadIcon( hinstance, "ICON" );
-   	wc.hIconSm 	= NULL				;
+   	//wc.hIconSm 	= NULL				;
 /*
    	wc.hIconSm 	= LoadImage( hinstance,
 //   				MAKEINTRESOURCE(0),
@@ -99,7 +101,8 @@ void	InitWindow( HANDLE hinstance, int nCmdShow, char *title)
    	wc.lpszMenuName	= NULL				;
    	wc.lpfnWndProc	= WrapWindowProc		;
 
-   	if(!RegisterClassEx( &wc ))
+   	//if(!RegisterClassEx( &wc ))
+   	if(!RegisterClass( &wc ))
    	{
 		exit(1)	;
    	}
