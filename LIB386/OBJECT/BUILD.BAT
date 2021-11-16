@@ -1,3 +1,3 @@
-@call builddos.bat
+@rem @call builddos.bat
 @buildnt.bat
 

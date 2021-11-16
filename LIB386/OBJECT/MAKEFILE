@@ -28,15 +28,16 @@ AFLAGS = /nologo /Cx /Zm /c /W0 /Sa /D$(DEF) /Zd /Cp
 .SILENT
 
 $(LIB).LIB: $(OBJETS)
+	echo *$(WL) $(LFLAGS) $(LIB) $?
 	*$(WL) $(LFLAGS) $(LIB) $?
-	PRNTITRE G "$(LIB)"
+	#PRNTITRE G "$(LIB)"
 
 .c.obj:
-	PRNTITRE M "$*.C"
+	#PRNTITRE M "$*.C"
+	echo $(CC) $* $(CFLAGS)
 	$(CC) $* $(CFLAGS)
 
 .asm.obj:
-	PRNTITRE M "$*.ASM"
+	#PRNTITRE M "$*.ASM"
+	echo $(ASM) $(AFLAGS) $*.ASM
 	$(ASM) $(AFLAGS) $*.ASM
-
-
