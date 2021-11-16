@@ -1,4 +1,6 @@
 @echo off
+del *.lib > NUL
+del *.PCH > NUL
 @rem pkunzip -o objnt >NUL
 del *.obj > NUL
 wmake BT=NT
