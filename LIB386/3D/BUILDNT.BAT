@@ -1,4 +1,6 @@
 @echo off
-pkunzip -o objnt >NUL
+@rem pkunzip -o objnt >NUL
+del *.obj > NUL
 wmake BT=NT
-pkzip -m objnt *.obj >NUL
+@rem pkzip -m objnt *.obj >NUL
+del *.obj > NUL
