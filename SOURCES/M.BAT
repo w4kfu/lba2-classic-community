@@ -110,7 +110,7 @@ attrib +a f:\projet\lba2\tools\perso\*.asm
 
 rem goto pas_besoin
 
-@call getsrc.bat
+@rem @call getsrc.bat
 
 :pas_besoin
 
@@ -119,10 +119,10 @@ rem goto pas_besoin
 :compil
 
 @if "%RAMSYS%"=="" goto normal
-e:\compil\watcom\binw\wmake %1 %2 %3 %4 %5 %6 %7 %8 %9
+%WATCOM%\binnt\wmake %1 %2 %3 %4 %5 %6 %7 %8 %9
 @goto fin
 :normal
-%WATCOM%\binw\wmake %1 %2 %3 %4 %5 %6 %7 %8 %9
+%WATCOM%\binnt\wmake %1 %2 %3 %4 %5 %6 %7 %8 %9
 :fin
 @SET LBA2HD=
 @SET LBA2DEMO=

@@ -14,7 +14,7 @@ ASM	= $(%MASM)\bin\ml
 !else
 ASM	= f:\compil\masm611\bin\ml
 !endif
-PCHDIR	= f:
+PCHDIR	= .\
 
 !endif
 
@@ -30,9 +30,12 @@ WL = $(WATCOM)\binw\wlib
 LL = $(WATCOM)\binw\wlink
 !endif
 
-AFLAGS  = /Cx /Zm /Zi /c /W0 /Sa /nologo
-CFLAGS  = /hw /oneatxz /zp2 /5r /zq /s /w3 /bt=DOS /fh=$(PCHDIR)lba.pch /DDOS4GW
-LLFLAGS = SYSTEM dos4g OP CASEEXACT,QUIET,STACK=7000,DOSSEG,SYMF,MAP
+#AFLAGS  = /Cx /Zm /Zi /c /W0 /Sa /nologo
+#CFLAGS  = /hw /oneatxz /zp2 /5r /zq /s /w3 /bt=DOS /fh=$(PCHDIR)lba.pch /DDOS4GW
+AFLAGS  = /Cx /Zm /Zi /c /W0 /Sa /nologo /D_WIN32
+CFLAGS  = /hw /oneatxz /zp2 /5r /zq /s /w3 /bt=NT /fh=$(PCHDIR)lba.pch /D_WIN32 /hc /fh=NT
+#LLFLAGS = SYSTEM dos4g OP CASEEXACT,QUIET,STACK=7000,DOSSEG,SYMF,MAP
+LLFLAGS = 
 
 !ifdef %LBA2HD
 CFLAGS = $+$(CFLAGS)$- /DONE_GAME_DIRECTORY /d1 /DCDROM
@@ -70,38 +73,45 @@ OBJETS  = perso.obj bezier.obj diskfunc.obj fiche.obj extra.obj incrust.obj  &
 	  sort.obj config.obj credits.obj zv.obj scan.obj keyb.obj music.obj &
 	  critical.obj
 
-LIBS	= ..\tools\perso\3dext\3dextg.lib
+LIBS	= .\3dext\NT_3DEXTR.lib
 
 EXE     = LBA0
 
 $(EXE).exe: $(VERSION) $(LIBS)
 	echo    Link $(EXE).EXE
+	echo *$(LL) $(LLFLAGS) NAME $(EXE).exe LIB $(LIBS) FILE *.obj
 	*$(LL) $(LLFLAGS) NAME $(EXE).exe LIB $(LIBS) FILE *.obj
-	prntitre M "$(EXE) OK"
+	#prntitre M "$(EXE) OK"
 
 .c.obj :
-	PRNTITRE M "$*.C"
+	#PRNTITRE M "$*.C"
+	echo $(CC) $^& $(CFLAGS)
 	$(CC) $^& $(CFLAGS)
 
 .cpp.obj :
-	PRNTITRE M "$*.CPP"
+	#PRNTITRE M "$*.CPP"
+	echo $(CP) $^& $(CFLAGS)
 	$(CP) $^& $(CFLAGS)
 
 .asm.obj :
-	PRNTITRE M "$*.ASM"
+	#PRNTITRE M "$*.ASM"
+	echo $(ASM) $(AFLAGS) $^&.ASM
 	$(ASM) $(AFLAGS) $^&.ASM
 
 $(VERSION): version.cpp $(OBJETS)
-	PRNTITRE M "version.cpp"
+	#PRNTITRE M "version.cpp"
+	echo $(CP) version $(CFLAGS)
 	$(CP) version $(CFLAGS)
 
 message.obj: message.cpp
-	PRNTITRE M "message.cpp"
+	#PRNTITRE M "message.cpp"
+	echo $(CP) message $(CFLAGS)
 	del $(PCHDIR)lba.pch
 	$(CP) message $(CFLAGS)
 
 gamemenu.obj: gamemenu.cpp
-	PRNTITRE M "gamemenu.cpp"
+	#PRNTITRE M "gamemenu.cpp"
+	echo $(CP) gamemenu $(CFLAGS)
 	del $(PCHDIR)lba.pch
 	$(CP) gamemenu $(CFLAGS)
 

@@ -12,6 +12,9 @@
 #include <polygon.h>
 #include <menu.h>
 
+#define	WORLD_SIZE	32768
+#define	NB_POLYS_COTE	4
+
 #ifndef	_WIN32
 #define	DEBUG_TOOLS	1
 #endif

@@ -1,3 +1,4 @@
+#include	"defines.h"
 
 S32	Draw_Poly( STRUC_CLIPVERTEX src[], S32 type )
 {

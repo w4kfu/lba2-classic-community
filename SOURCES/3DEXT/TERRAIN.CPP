@@ -4,8 +4,8 @@
 #define		COLOR_LIMITE	255
 #define		SIZE_TEXTURE	64
 
-#define	WORLD_SIZE	32768
-#define	NB_POLYS_COTE	4
+//#define	WORLD_SIZE	32768
+//#define	NB_POLYS_COTE	4
 
 // Taille 2D mini pour accepter un poly animé
 #define	ANI_POLY_STEP_Y		2

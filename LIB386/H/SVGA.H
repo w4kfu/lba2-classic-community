@@ -9,11 +9,11 @@
 
 #ifdef cedric
 
-#ifdef	__SW_3R
-#pragma library ("F:\PROJET\LIB386\SVGA\NT_SVGR.LIB")
-#else//	__SW_3R
+//#ifdef	__SW_3R
+//#pragma library ("F:\PROJET\LIB386\SVGA\NT_SVGR.LIB")
+//#else//	__SW_3R
 #pragma library ("F:\PROJET\LIB386\SVGA\NT_SVGS.LIB")
-#endif//__SW_3R
+//#endif//__SW_3R
 
 #else//cedric
 

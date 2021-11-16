@@ -1,6 +1,7 @@
 #include        "defines.h"
 
 /*--------- divers ---------------------------------------------*/
+
 extern	S32	BodyComportement;
 
 extern	S32	DebugFps	;

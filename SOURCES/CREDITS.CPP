@@ -331,11 +331,11 @@ S32     GamePlayCredits( char *file_name, S32 mode )
 		}
 
 // check music
-		if( Sample_Driver_Enabled
-		AND (TimerRefHR>NextMusicTimer) )
-		{
-			PlayMusic( CD_TRACK_CREDITS, FALSE ) ;
-		}
+		//if( Sample_Driver_Enabled
+		//AND (TimerRefHR>NextMusicTimer) )
+		//{
+		//	PlayMusic( CD_TRACK_CREDITS, FALSE ) ;
+		//}
 
 // animated characters
 

@@ -50,7 +50,7 @@ int __far CriticalErrorHandler(	unsigned int deverr,
 HERCULE( HStringf( 0, 0, "CriticalErrorCount: %d  ", CriticalErrorCount ) ) ;
 #endif
 
-	if( CriticalErrorCount>=CRITICAL_ERROR_COUNT_FAILURE )
+	if( CriticalErrorCount>=0x42/*CRITICAL_ERROR_COUNT_FAILURE*/ )
 	{
 		// report which error it was
 		sprintf( msg, "Critical Error: %s drive %c.", CriticalErrMsg[(errcode&0x00FF)], 'A'+(deverr&0x00FF) ) ;

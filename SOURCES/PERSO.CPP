@@ -2138,6 +2138,42 @@ void    ChangeProgDir( char *path )
 /*══════════════════════════════════════════════════════════════════════════*/
 /*══════════════════════════════════════════════════════════════════════════*/
 
+S32 Yp;
+S32 Xp;
+S32 CameraZ;
+S32 CameraX;
+S32 CameraY;
+S32 PaletteVbl;
+S32 ClipYMin;
+S32 ClipYMax;
+S32 ScreenYMax;
+S32 ScreenXMax;
+S32 ScreenYMin;
+S32 ScreenXMin;
+S32 X0;
+S32 Z0;
+S32 Y0;
+U8      ColMask;
+S32     AlphaLight,     BetaLight,      GammaLight;
+S32     ClipWindowYMax;
+S32             RepMask;
+S32     BoxClipXMin, BoxClipXMax, BoxClipYMin, BoxClipYMax      ;
+S32     ClipXMax;
+S32     ClipXMin;
+S32 CameraZr;
+U32     ModeDesiredSize         ;
+U32     ModeDesiredY;
+U32     ModeDesiredX;
+U32     SizeChar        ;
+U8      TextInk         ;
+U8      TextPaper       ;
+S32     ClipWindowYMin;
+
+void near DetectJoys(void)
+{
+
+}
+
 #ifdef  _WIN32
 int PASCAL WinMain(     HINSTANCE hInstance, HINSTANCE hPrevInstance,
                         LPSTR lpCmdLine, int nCmdShow                   )

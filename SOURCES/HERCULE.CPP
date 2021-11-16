@@ -10,6 +10,7 @@
 #include	"f:\projet\lib386\lib_sys4\lib_sys.h"
 #include	"hercule.h"
 #else
+#include	"hercule.h"
 #include	"c_extern.h"
 #endif
 

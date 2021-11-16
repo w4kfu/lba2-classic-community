@@ -1,6 +1,8 @@
 #ifndef	HERCULE_H
 #define	HERCULE_H
 
+#include	<system\adeline.h>
+
 //▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 #define	BASEH	0xB0000L	// Adresse de base carte Hercule
