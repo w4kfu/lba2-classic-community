@@ -49,7 +49,7 @@ extern HDIGDRIVER	DigDriver;	// Handle to digital audio driver
 
 //████████████████████████████████████████████████████████████████████████████
 
-RCFUNC void * RADLINK radmalloc(U32 size)
+void * RADLINK radmalloc(U32 size)
 {
 	MALLOC_BLOCK	*ptr		;
 	MALLOC_BLOCK	*next		;
@@ -108,7 +108,7 @@ end:
 
 //████████████████████████████████████████████████████████████████████████████
 
-RCFUNC void RADLINK radfree(void *ptr)
+void RADLINK radfree(void *ptr)
 {
 	S32		i, found		;
 	MALLOC_BLOCK	*prev, *block, *next	;
