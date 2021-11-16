@@ -1,4 +1,8 @@
 @echo off
-pkunzip -o objntr >NUL
+del *.lib > NUL
+del *.PCH > NUL
+@rem pkunzip -o objntr >NUL
+del *.obj > NUL
 wmake BT=NT CALL=REG
-pkzip -m objntr *.obj >NUL
+@rem pkzip -m objntr *.obj >NUL
+del *.obj > NUL

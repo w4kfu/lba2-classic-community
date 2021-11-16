@@ -48,17 +48,21 @@ AFLAGS = $+$(AFLAGS)$- /nologo /Cx /Zm /c /W0 /Sa /Zd /Cp
 .SILENT
 
 $(LIB).LIB: $(OBJETS1) $(OBJETS2)
+	echo *$(WL) $(LFLAGS) $(LIB) $?
 	*$(WL) $(LFLAGS) $(LIB) $?
-	PRNTITRE G "$(LIB)"
+	#PRNTITRE G "$(LIB)"
 
 .cpp.obj:
-	PRNTITRE M "$*.CPP"
+	#PRNTITRE M "$*.CPP"
+	echo $(CPP) $* $(CFLAGS)
 	$(CPP) $* $(CFLAGS)
 
 .c.obj:
-	PRNTITRE M "$*.C"
+	#PRNTITRE M "$*.C"
+	echo $(CC) $* $(CFLAGS)
 	$(CC) $* $(CFLAGS)
 
 .asm.obj:
-	PRNTITRE M "$*.ASM"
+	#PRNTITRE M "$*.ASM"
+	echo $(ASM) $(AFLAGS) $*.ASM
 	$(ASM) $(AFLAGS) $*.ASM
